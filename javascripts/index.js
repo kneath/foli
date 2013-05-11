@@ -2,8 +2,10 @@ enchant()
 
 window.onload = function() {
     var game = new Game(320, 320)
-    game.preload('images/maps/map0.png')
+    game.preload('images/maps/map0.png', 'images/characters/chara0.gif')
     game.onload = function() {
+
+      // Lay out a map
       var map = new Map(16, 16)
       map.image = game.assets['images/maps/map0.png']
       map.loadData(
@@ -24,8 +26,16 @@ window.onload = function() {
             [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2],
             [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2]
         ]
-      );
+      )
       game.rootScene.addChild(map)
+
+      // Get a character
+      var foli = new Sprite(32, 32)
+      foli.image = game.assets['images/characters/chara0.gif']
+      foli.frame = 6
+      foli.x = 8
+      foli.y = 192
+      game.rootScene.addChild(foli)
     }
     game.start()
 }
