@@ -36,6 +36,27 @@ window.onload = function() {
       foli.x = 8
       foli.y = 192
       game.rootScene.addChild(foli)
+
+      // Let's move her
+      foli.addEventListener("enterframe", function(){
+        if (game.input.right) {
+          this.x += 1
+          this.frame = 24
+        }
+        if (game.input.left) {
+          this.x -= 1
+          this.frame = 15
+        }
+        if (game.input.up) {
+          this.y -= 1
+          this.frame = 33
+        }
+        if (game.input.down) {
+          this.y += 1
+          this.frame = 6
+        }
+      })
+
     }
     game.start()
 }
