@@ -60,8 +60,8 @@ window.onload = function() {
 
       // Let's move her
       foli.addEventListener("enterframe", function(){
-        x = this.x
-        y = this.y
+        var x = this.x
+        var y = this.y
 
         if (game.input.right) {
           x += 1
@@ -81,8 +81,31 @@ window.onload = function() {
         }
 
         // Did we hit a boundary?
-        if (map.hitTest(x, y))
+        // We're using the bottom center 6 x 6 of the sprite for hit testing
+        var topBoundary = this.y + (32 - 6)
+        var bottomBoundary = this.y + 32
+        var leftBoundary = this.x + (16 - 3)
+        var rightBoundary = this.x + (16 + 3)
+        if (map.hitTest(leftBoundary, topBoundary)){
+          this.x += 2
+          this.y += 2
           return
+        }
+        if (map.hitTest(rightBoundary, topBoundary)){
+          this.x -= 2
+          this.y += 2
+          return
+        }
+        if (map.hitTest(leftBoundary, bottomBoundary)){
+          this.x += 2
+          this.y -= 2
+          return
+        }
+        if (map.hitTest(rightBoundary, bottomBoundary)){
+          this.x -= 2
+          this.y -= 2
+          return
+        }
 
         this.x = x
         this.y = y
