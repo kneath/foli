@@ -15,4 +15,11 @@ game.addEventListener("load", function(){
       resetGame()
   })
 
+  var key = new Sprite(16, 16)
+  key.image = game.assets['images/key.png']
+  key.frame = 0
+  key.x = 16*35
+  key.y = 16*7
+  game.rootScene.addChild(key)
+
 })
