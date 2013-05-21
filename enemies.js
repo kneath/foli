@@ -29,6 +29,10 @@ game.addEventListener("load", function(){
     }
 
     movedX++
+
+    // DEATH
+    if (this.intersect(foli))
+      resetGame()
   })
 
 })

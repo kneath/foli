@@ -1,7 +1,7 @@
 game.addEventListener("load", function(){
 
   // Get a character
-  var foli = new Sprite(32, 32)
+  foli = new Sprite(32, 32)
   foli.image = game.assets['images/character.gif']
   foli.frame = 6
   foli.x = 0
