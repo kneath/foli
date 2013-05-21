@@ -15,11 +15,13 @@ game.addEventListener("load", function(){
     if (movedX == 200 && direction == "left"){
       direction = "right"
       movedX = 0
+      this.scaleX = -1
     }
 
     if (movedX == 200 && direction == "right"){
       direction = "left"
       movedX = 0
+      this.scaleX = 1
     }
 
     if (direction == "left"){
