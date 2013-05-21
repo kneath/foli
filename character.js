@@ -9,24 +9,25 @@ game.addEventListener("load", function(){
   game.rootScene.addChild(foli)
 
   // Let's move her
+  var speed = 2;
   foli.addEventListener("enterframe", function(){
     var x = this.x
     var y = this.y
 
     if (game.input.right) {
-      x += 1
+      x += 1*speed
       this.frame = 24
     }
     if (game.input.left) {
-      x -= 1
+      x -= 1*speed
       this.frame = 15
     }
     if (game.input.up) {
-      y -= 1
+      y -= 1*speed
       this.frame = 33
     }
     if (game.input.down) {
-      y += 1
+      y += 1*speed
       this.frame = 6
     }
 
