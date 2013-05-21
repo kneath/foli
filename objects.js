@@ -11,7 +11,7 @@ game.addEventListener("load", function(){
   game.rootScene.addChild(pit)
 
   pit.addEventListener("enterframe", function(){
-    if (this.intersect(foli))
+    if (this.within(foli, 2*16 + 5))
       resetGame()
   })
 
