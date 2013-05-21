@@ -9,4 +9,15 @@ var map, foli
 function resetGame(){
   foli.x = 0
   foli.y = 200
+
+  document.body.setAttribute('style', 'background-color:#911')
+  setTimeout(function() {
+    document.body.setAttribute('style', '')
+  }, 100)
+  setTimeout(function() {
+    document.body.setAttribute('style', 'background-color:#911')
+  }, 200)
+  setTimeout(function() {
+    document.body.setAttribute('style', '')
+  }, 300)
 }
