@@ -5,7 +5,30 @@ game.addEventListener("load", function(){
   alien.image = game.assets['images/alien.gif']
   alien.frame = 0
   alien.x = 500
-  alien.y = 200
+  alien.y = 150
   game.rootScene.addChild(alien)
+
+  // Alien moves left and right 200px
+  var movedX = 0
+  var direction = "left";
+  alien.addEventListener("enterframe", function(){
+    if (movedX == 200 && direction == "left"){
+      direction = "right"
+      movedX = 0
+    }
+
+    if (movedX == 200 && direction == "right"){
+      direction = "left"
+      movedX = 0
+    }
+
+    if (direction == "left"){
+      this.x -= 1
+    } else {
+      this.x += 1
+    }
+
+    movedX++
+  })
 
 })
