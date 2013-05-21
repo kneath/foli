@@ -16,19 +16,31 @@ game.addEventListener("load", function(){
 
     if (game.input.right) {
       x += 1*speed
-      this.frame = 24
+      if (this.frame < 24 || this.frame >= 26)
+        this.frame = 24
+      else
+        this.frame++
     }
     if (game.input.left) {
       x -= 1*speed
-      this.frame = 15
+      if (this.frame < 15 || this.frame >= 17)
+        this.frame = 15
+      else
+        this.frame++
     }
     if (game.input.up) {
       y -= 1*speed
-      this.frame = 33
+      if (this.frame < 33 || this.frame >= 35)
+        this.frame = 33
+      else
+        this.frame++
     }
     if (game.input.down) {
       y += 1*speed
-      this.frame = 6
+      if (this.frame < 6 || this.frame >= 8)
+        this.frame = 6
+      else
+        this.frame++
     }
 
     // Did we hit a boundary?
