@@ -8,6 +8,9 @@ game.addEventListener("load", function(){
   foli.y = 200
   game.rootScene.addChild(foli)
 
+  // Custom attributes
+  foli.holdingKey = false
+
   // Let's move her
   var speed = 2;
   foli.addEventListener("enterframe", function(){
