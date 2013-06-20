@@ -23,13 +23,22 @@ game.addEventListener("load", function(){
   key.y = 16*7
   game.rootScene.addChild(key)
 
+  // A treasure box!
+  var treasure = new Sprite(16, 16)
+  treasure.image = game.assets['images/treasure-chest.png']
+  treasure.frame = 0
+  treasure.x = 16*35
+  treasure.y = 16*25
+
   key.addEventListener("enterframe", function(){
     if (foli.holdingKey) {
       this.x = foli.x
       this.y = foli.y
     } else {
-      if (this.intersect(foli))
+      if (this.intersect(foli)){
         foli.holdingKey = true
+        game.rootScene.addChild(treasure)
+      }
     }
   })
 
