@@ -6,6 +6,9 @@ game.fps = 25
 game.preload('images/character.gif', 'images/map.png', 'images/alien.gif', 'images/key.png', 'images/treasure-chest.png')
 var map, foli, key, alien
 
+var speed = 1
+var anger = 1
+
 function resetGame(){
   foli.x = 0
   foli.y = 200

@@ -12,34 +12,33 @@ game.addEventListener("load", function(){
   foli.holdingKey = false
 
   // Let's move her
-  var speed = 2;
   foli.addEventListener("enterframe", function(){
     var x = this.x
     var y = this.y
 
     if (game.input.right) {
-      x += 1*speed
+      x += 2*speed
       if (this.frame < 24 || this.frame >= 26)
         this.frame = 24
       else
         this.frame++
     }
     if (game.input.left) {
-      x -= 1*speed
+      x -= 2*speed
       if (this.frame < 15 || this.frame >= 17)
         this.frame = 15
       else
         this.frame++
     }
     if (game.input.up) {
-      y -= 1*speed
+      y -= 2*speed
       if (this.frame < 33 || this.frame >= 35)
         this.frame = 33
       else
         this.frame++
     }
     if (game.input.down) {
-      y += 1*speed
+      y += 2*speed
       if (this.frame < 6 || this.frame >= 8)
         this.frame = 6
       else

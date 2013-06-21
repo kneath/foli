@@ -12,25 +12,25 @@ game.addEventListener("load", function(){
   var movedX = 0
   var direction = "left";
   alien.addEventListener("enterframe", function(){
-    if (movedX == 200 && direction == "left"){
+    if (movedX >= 200*anger && direction == "left"){
       direction = "right"
       movedX = 0
       this.scaleX = -1
     }
 
-    if (movedX == 200 && direction == "right"){
+    if (movedX >= 200*anger && direction == "right"){
       direction = "left"
       movedX = 0
       this.scaleX = 1
     }
 
     if (direction == "left"){
-      this.x -= 1
+      this.x -= 1*speed
     } else {
-      this.x += 1
+      this.x += 1*speed
     }
 
-    movedX++
+    movedX = movedX + speed
 
     // DEATH
     if (this.intersect(foli))
