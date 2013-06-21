@@ -46,6 +46,7 @@ game.addEventListener("load", function(){
     if (foli.holdingKey && this.intersect(foli)) {
       foli.holdingKey = false
       game.rootScene.removeChild(key)
+      game.rootScene.removeChild(alien)
       endGame()
     }
   })

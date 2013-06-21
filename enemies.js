@@ -1,7 +1,7 @@
 game.addEventListener("load", function(){
 
   // Get a character
-  var alien = new Sprite(217, 122)
+  alien = new Sprite(217, 122)
   alien.image = game.assets['images/alien.gif']
   alien.frame = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4]
   alien.x = 500
