@@ -42,4 +42,12 @@ game.addEventListener("load", function(){
     }
   })
 
+  treasure.addEventListener("enterframe", function(){
+    if (foli.holdingKey && this.intersect(foli)) {
+      foli.holdingKey = false
+      game.rootScene.removeChild(key)
+      endGame()
+    }
+  })
+
 })
