@@ -4,7 +4,7 @@ game.addEventListener("load", function(){
   alien = new Sprite(217, 122)
   alien.image = game.assets['images/alien.gif']
   alien.frame = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4]
-  alien.x = 500
+  alien.x = 430
   alien.y = 150
   game.rootScene.addChild(alien)
 
