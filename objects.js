@@ -30,6 +30,13 @@ game.addEventListener("load", function(){
   treasure.x = 16*35
   treasure.y = 16*25
 
+  // Exit stairs for success
+  var exit = new Sprite(16, 16)
+  exit.image = game.assets['images/map.png']
+  exit.frame = 14
+  exit.x = 16*37
+  exit.y = 16*25
+
   key.addEventListener("enterframe", function(){
     if (foli.holdingKey) {
       this.x = foli.x
@@ -47,7 +54,17 @@ game.addEventListener("load", function(){
       foli.holdingKey = false
       game.rootScene.removeChild(key)
       game.rootScene.removeChild(alien)
+      game.rootScene.removeChild(treasure)
+      game.rootScene.addChild(exit)
       endGame()
+    }
+  })
+
+  exit.addEventListener("enterframe", function(){
+    if (this.intersect(foli)){
+      game.rootScene.removeChild(foli)
+      game.rootScene.removeChild(exit)
+      alert("BOOM")
     }
   })
 
